@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with user profile and theme toggle -->
+    <header class="header">
+        <div class="header-content">
+            <div class="user-profile">
+                <div class="profile-avatar" id="profileAvatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <h2 id="userName">Welcome!</h2>
+                    <p id="userGreeting">Good morning</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="search-toggle" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar (hidden by default) -->
+    <div class="search-container" id="searchContainer">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search Google or DuckDuckGo...">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Grid -->
+    <main class="dashboard">
+        <!-- Clock and Weather Widget -->
+        <section class="widget clock-weather-widget">
+            <div class="clock-section">
+                <div class="time" id="currentTime">12:00</div>
+                <div class="date" id="currentDate">Monday, January 1, 2024</div>
+            </div>
+            <div class="weather-section">
+                <div class="weather-icon" id="weatherIcon">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="weather-info">
+                    <div class="temperature" id="temperature">72°F</div>
+                    <div class="weather-desc" id="weatherDesc">Sunny</div>
+                    <div class="location" id="location">New York, NY</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- To-Do List Widget -->
+        <section class="widget todo-widget">
+            <div class="widget-header">
+                <h3><i class="fas fa-tasks"></i> To-Do List</h3>
+                <button class="add-btn" id="addTodoBtn">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="todo-input-container" id="todoInputContainer">
+                <input type="text" id="todoInput" placeholder="Add a new task...">
+                <button id="saveTodoBtn">Add</button>
+            </div>
+            <div class="todo-list" id="todoList">
+                <!-- To-do items will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Notes Pad Widget -->
+        <section class="widget notes-widget">
+            <div class="widget-header">
+                <h3><i class="fas fa-sticky-note"></i> Quick Notes</h3>
+                <button class="save-btn" id="saveNotesBtn">
+                    <i class="fas fa-save"></i>
+                </button>
+            </div>
+            <textarea id="notesTextarea" placeholder="Write your notes here..."></textarea>
+        </section>
+
+        <!-- Daily Quote Widget -->
+        <section class="widget quote-widget">
+            <div class="widget-header">
+                <h3><i class="fas fa-quote-left"></i> Daily Inspiration</h3>
+                <button class="refresh-btn" id="refreshQuoteBtn">
+                    <i class="fas fa-refresh"></i>
+                </button>
+            </div>
+            <div class="quote-content">
+                <blockquote id="quoteText">
+                    "The only way to do great work is to love what you do."
+                </blockquote>
+                <cite id="quoteAuthor">- Steve Jobs</cite>
+            </div>
+        </section>
+    </main>
+
+    <!-- User Profile Modal -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>User Profile</h3>
+                <button class="close-btn" id="closeProfileModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="nameInput">Your Name:</label>
+                    <input type="text" id="nameInput" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="locationInput">Location (for weather):</label>
+                    <input type="text" id="locationInput" placeholder="City, Country">
+                </div>
+                <button class="save-profile-btn" id="saveProfileBtn">Save Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
